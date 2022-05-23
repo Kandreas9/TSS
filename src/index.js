@@ -10,7 +10,11 @@ const app = express()
 
 app.disable('x-powered-by') //Disable Express Signature
 
-app.use(cors())
+app.use(
+    cors({
+        origin: 'https://true-self.netlify.app/',
+    }),
+)
 mongoConnection()
 parseRes(app)
 routes(app)
